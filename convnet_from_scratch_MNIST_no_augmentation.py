@@ -20,7 +20,6 @@ for data in train_datasets.take(5):
     print(data['image'].shape)
     print(data['label'])
 
-
 # 2. 데이터 전처리
 
 # 데이터 전처리 함수
@@ -39,7 +38,6 @@ test_data = test_datasets.map(preprocessing).batch(BATCH_SIZE)
 for image, label in train_data.take(1):
     print(image.shape)
     print(label.shape)
-
 
 # 3. 모델 만들기
 
@@ -65,7 +63,6 @@ optimizer = tf.keras.optimizers.Adam(learning_rate=3e-5)  # 1e-3 -> 3e-5
 model.compile(loss="sparse_categorical_crossentropy",
               optimizer=optimizer,
               metrics="accuracy")
-
 
 # 4. 모델 훈련하기, 평가
 
